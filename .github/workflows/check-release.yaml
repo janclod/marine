@@ -5,7 +5,7 @@ on:
 name: Check
 
 jobs:
-  test-coverage:
+  Check-codcov-lintr:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
