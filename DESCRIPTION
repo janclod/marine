@@ -6,7 +6,9 @@ Authors@R:
            family = "Tiecher",
            role = c("aut", "cre"),
            email = "ctiecher@gmail.com")
-Description: see title
+Description: This package serves as the basis to build and deploy a Shiny app.
+            The Shiny app will allow the visualization of data related to
+            marine vessels.
 License: GPL (>= 3)
 Imports: 
     config,
@@ -15,3 +17,6 @@ Imports:
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
