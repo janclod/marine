@@ -1,13 +1,13 @@
 Package: marine
-Title: An Amazing Shiny App
-Version: 0.0.0.9000
+Title: Shiny app to visualize data about marine vessels
+Version: 0.1
 Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
+    person(given = "Claudio",
+           family = "Tiecher",
            role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
-License: What license is it under?
+           email = "ctiecher@gmail.com")
+Description: see title
+License: GPL (>= 3)
 Imports: 
     config,
     golem,
