@@ -1,3 +1,52 @@
+#' Basic dropdown module
+#' Contains:
+#' * dropdown menu
+#' * textfield showing the selection from the dropdown (default = None)
+drop_down <- function(id) {
+  ns <- shiny::NS("dropdown")
+  shiny::tagList(
+    shiny.semantic::dropdown_input(ns(id), choices = c("stub", "stub")),
+    shiny::textOutput(ns(id))
+  )}
+
+#' Page layout top module
+#' Contains:
+#' * dropdown menu 1
+#' * dropdown menu 2
+double_drop_down <- function(id) {
+  ns <- shiny::NS("doubledrop")
+  shiny::tagList(
+    shiny::div(ns(id), drop_down("1")),
+    shiny::div(ns(id), drop_down("2"))
+    )
+}
+
+#' Sidebar element
+#' sidebar menu with one or more tabs
+side_bar <- function() {
+  semantic.dashboard::sidebarMenu(
+    semantic.dashboard::menuItem(tabName = "Vessel", double_drop_down("1")))
+}
+
+#' Page layout using semantic.dashbaord
+#' * dashboardHeader
+#' * dashboardSidebar
+#' * dashboardBody
+page_main <- function() {
+  semantic.dashboard::dashboardPage(
+    semantic.dashboard::dashboardHeader(title = "Marine traffic",
+                                        color = "blue"),
+    semantic.dashboard::dashboardSidebar(side = "left",
+                                         size = "thin",
+                                         color = "teal",
+                                         side_bar()),
+    semantic.dashboard::dashboardBody(
+      semantic.dashboard::tabItems(
+        semantic.dashboard::tabItem(tabName = "vessel", p("Add map here!")))
+    )
+  )
+}
+
 #' The application User-Interface
 #'
 #' @param request Internal parameter for `{shiny}`.
@@ -9,10 +58,8 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # List the first level UI elements here
-    fluidPage(
-      h1("marine")
+    page_main()
     )
-  )
 }
 
 #' Add external Resources to the Application
