@@ -42,7 +42,10 @@ page_main <- function() {
                                          side_bar()),
     semantic.dashboard::dashboardBody(
       semantic.dashboard::tabItems(
-        semantic.dashboard::tabItem(tabName = "vessel", p("Add map here!")))
+        semantic.dashboard::tabItem(tabName = "vessel",
+                                    mod_test_ui("1"),
+                                    mod_dropdown_ui("vessel type")
+                                    ))
     )
   )
 }
