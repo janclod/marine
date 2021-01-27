@@ -28,7 +28,7 @@ mod_dropdown_ui <- function(id) {
 #'
 #' @noRd
 mod_dropdown_server <- function(id) {
-  moduleServer(
+  shiny::moduleServer(
     id,
     function(input, output, session) {
       output$out_parent <- shiny::renderText(input[["dropdown_parent"]])
