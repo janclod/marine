@@ -17,7 +17,8 @@ Imports:
     htmltools,
     lintr (>= 2.0.1),
     shiny.semantic,
-    semantic.dashboard
+    semantic.dashboard,
+    pkgload
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
