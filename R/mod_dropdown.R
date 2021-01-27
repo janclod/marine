@@ -2,7 +2,7 @@
 #'
 #' @description Double drop-down input.
 #'
-#' @param id Internal parameters for {shiny}.
+#' @param id, input, output, session Internal parameters for {shiny}.
 #'
 #' @noRd
 mod_dropdown_ui <- function(id) {
@@ -25,10 +25,6 @@ mod_dropdown_ui <- function(id) {
 }
     
 #' dropdown Server Function
-#'
-#' @description Double drop-down input.
-#'
-#' @param id, input, output, session Internal parameters for {shiny}.
 #'
 #' @noRd
 mod_dropdown_server <- function(id) {

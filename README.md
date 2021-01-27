@@ -1,24 +1,22 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# marine
-
 <!-- badges: start -->
 
 <!-- badges: end -->
 
+# marine
+
 Visualize marine vessels data.
 
-## Installation
+## Marine Shiny app
 
-You can install the released version of marine from
-[CRAN](https://CRAN.R-project.org) with:
+This package is used to deploy the [marine Shiny app](https://janclod.shinyapps.io/marine/?_ga=2.49678438.176053021.1611774272-657600272.1611245766).
 
-``` r
-install.packages("marine")
-```
+## Marine package installation
 
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version of marine 
+from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
