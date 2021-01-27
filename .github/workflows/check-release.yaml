@@ -5,7 +5,7 @@ on:
 name: Check
 
 jobs:
-  Check-codcov-lintr:
+  RCMRCHECK-codecov-lintr:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}

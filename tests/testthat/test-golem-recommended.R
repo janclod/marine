@@ -1,11 +1,9 @@
 test_that("app ui", {
-  #skip("Issue #1")
   ui <- app_ui()
   golem::expect_shinytaglist(ui)
 })
 
 test_that("app server", {
-  #skip("Issue #2")
   server <- app_server
   expect_type(server, "closure")
 })

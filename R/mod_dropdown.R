@@ -18,7 +18,7 @@ mod_dropdown_ui <- function(id) {
     
 #' dropdown Server Function
 #'
-#' @noRd 
+#' @noRd
 mod_dropdown_server <- function(id) {
   moduleServer(
     id,
@@ -27,10 +27,3 @@ mod_dropdown_server <- function(id) {
     }
   )
 }
-    
-## To be copied in the UI
-# mod_dropdown_ui("dropdown_ui_1")
-    
-## To be copied in the server
-# callModule(mod_dropdown_server, "dropdown_ui_1")
- 

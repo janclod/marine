@@ -4,10 +4,10 @@
 #'
 #' @param id,input,output,session Internal parameters for {shiny}.
 #'
-#' @noRd 
+#' @noRd
 #'
-#' @importFrom shiny NS tagList 
-mod_test_ui <- function(id){
+#' @importFrom shiny NS tagList
+mod_test_ui <- function(id) {
   ns <- NS(id)
   tagList(
     actionButton(ns("button"), label = "potato"),
@@ -17,8 +17,8 @@ mod_test_ui <- function(id){
     
 #' test Server Function
 #'
-#' @noRd 
-mod_test_server <- function(id){
+#' @noRd
+mod_test_server <- function(id) {
   moduleServer(
     id,
     function(input, output, session) {
@@ -33,10 +33,3 @@ mod_test_server <- function(id){
     }
   )
 }
-    
-## To be copied in the UI
-# mod_test_ui("test_ui_1")
-    
-## To be copied in the server
-# callModule(mod_test_server, "test_ui_1")
- 
