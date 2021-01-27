@@ -6,6 +6,5 @@
 #' @noRd
 app_server <- function(input, output, session) {
   # List the first level callModules here
-  mod_test_server("1")
-  mod_dropdown_server("vessel type")
+  marine::mod_dropdown_server("vessel type")
 }

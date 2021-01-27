@@ -1,5 +1,6 @@
 #' Sidebar element
 #' sidebar menu with one or more tabs
+#' @noRd
 side_bar <- function() {
   semantic.dashboard::sidebarMenu(
     semantic.dashboard::menuItem(tabName = "vessel_browser",
@@ -10,6 +11,7 @@ side_bar <- function() {
 #' * dashboardHeader
 #' * dashboardSidebar
 #' * dashboardBody
+#' @noRd
 page_main <- function() {
   semantic.dashboard::dashboardPage(
     semantic.dashboard::dashboardHeader(title = "Marine traffic",
@@ -21,7 +23,7 @@ page_main <- function() {
     semantic.dashboard::dashboardBody(
       semantic.dashboard::tabItems(
         semantic.dashboard::tabItem(tabName = "vessel_browser",
-                                    mod_dropdown_ui("vessel type")
+                                    marine::mod_dropdown_ui("vessel type")
                                     ))
     )
   )
@@ -31,7 +33,6 @@ page_main <- function() {
 #'
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
-#' @import shiny
 #' @noRd
 app_ui <- function(request) {
   tagList(
