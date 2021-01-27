@@ -1,31 +1,9 @@
-#' Basic dropdown module
-#' Contains:
-#' * dropdown menu
-#' * textfield showing the selection from the dropdown (default = None)
-drop_down <- function(id) {
-  ns <- shiny::NS("dropdown")
-  shiny::tagList(
-    shiny.semantic::dropdown_input(ns(id), choices = c("stub", "stub")),
-    shiny::textOutput(ns(id))
-  )}
-
-#' Page layout top module
-#' Contains:
-#' * dropdown menu 1
-#' * dropdown menu 2
-double_drop_down <- function(id) {
-  ns <- shiny::NS("doubledrop")
-  shiny::tagList(
-    shiny::div(ns(id), drop_down("1")),
-    shiny::div(ns(id), drop_down("2"))
-    )
-}
-
 #' Sidebar element
 #' sidebar menu with one or more tabs
 side_bar <- function() {
   semantic.dashboard::sidebarMenu(
-    semantic.dashboard::menuItem(tabName = "Vessel", double_drop_down("1")))
+    semantic.dashboard::menuItem(tabName = "vessel_browser",
+                                 text = "Browser"))
 }
 
 #' Page layout using semantic.dashbaord
@@ -42,8 +20,7 @@ page_main <- function() {
                                          side_bar()),
     semantic.dashboard::dashboardBody(
       semantic.dashboard::tabItems(
-        semantic.dashboard::tabItem(tabName = "vessel",
-                                    mod_test_ui("1"),
+        semantic.dashboard::tabItem(tabName = "vessel_browser",
                                     mod_dropdown_ui("vessel type")
                                     ))
     )
