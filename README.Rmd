@@ -16,19 +16,20 @@ knitr::opts_chunk$set(
 # marine
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/janclod/marine/workflows/R-CMD-check/badge.svg?branch=master)](https://github.com/janclod/marine/actions)
+[![codecov.io](https://codecov.io/github/janclod/marine/coverage.svg)](https://codecov.io/github/janclod/marine/branch/master)
 <!-- badges: end -->
 
 Visualize marine vessels data.
 
-## Installation
+## Marine Shiny app
 
-You can install the released version of marine from [CRAN](https://CRAN.R-project.org) with:
+This package is used to deploy the [marine Shiny app](https://janclod.shinyapps.io/marine/?_ga=2.49678438.176053021.1611774272-657600272.1611245766).
 
-``` r
-install.packages("marine")
-```
+## Marine package installation
 
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version of marine 
+from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")

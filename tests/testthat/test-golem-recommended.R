@@ -1,26 +1,24 @@
 test_that("app ui", {
-  skip("Issue #1")
   ui <- app_ui()
-  expect_shinytaglist(ui)
+  golem::expect_shinytaglist(ui)
 })
 
 test_that("app server", {
-  skip("Issue #2")
   server <- app_server
-  expect_is(server, "function")
+  expect_type(server, "closure")
 })
 
 # Configure this test to fit your need
 test_that(
-  "app launches",{
+  "app launches", {
     skip("Issue #3")
     skip_on_cran()
     skip_on_travis()
     skip_on_appveyor()
     x <- processx::process$new(
-      "R", 
+      "R",
       c(
-        "-e", 
+        "-e",
         "pkgload::load_all(here::here());run_app()"
       )
     )
@@ -29,11 +27,3 @@ test_that(
     x$kill()
   }
 )
-
-
-
-
-
-
-
-

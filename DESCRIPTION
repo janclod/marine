@@ -16,7 +16,11 @@ Imports:
     glue,
     htmltools,
     lintr (>= 2.0.1),
-    pkgload
+    shiny.semantic,
+    semantic.dashboard,
+    pkgload,
+    leaflet,
+    magrittr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1

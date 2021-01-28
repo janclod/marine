@@ -1,18 +1,47 @@
+#' Sidebar element
+#' sidebar menu with one or more tabs
+#' @noRd
+side_bar <- function() {
+  semantic.dashboard::sidebarMenu(
+    semantic.dashboard::menuItem(tabName = "vessel_browser",
+                                 text = "Browser"))
+}
+
+#' Page layout using semantic.dashbaord
+#' * dashboardHeader
+#' * dashboardSidebar
+#' * dashboardBody
+#' @noRd
+page_main <- function() {
+  semantic.dashboard::dashboardPage(
+    semantic.dashboard::dashboardHeader(title = "Marine traffic",
+                                        color = "blue"),
+    semantic.dashboard::dashboardSidebar(side = "left",
+                                         size = "thin",
+                                         color = "teal",
+                                         side_bar()),
+    semantic.dashboard::dashboardBody(
+      semantic.dashboard::tabItems(
+        semantic.dashboard::tabItem(tabName = "vessel_browser",
+                                    mod_dropdown_ui("1"),
+                                    mod_map_ui("1")
+                                    ))
+    )
+  )
+}
+
 #' The application User-Interface
 #'
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
-#' @import shiny
 #' @noRd
 app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # List the first level UI elements here
-    fluidPage(
-      h1("marine")
+    page_main()
     )
-  )
 }
 
 #' Add external Resources to the Application
