@@ -47,6 +47,13 @@ mod_dropdown_server <- function(id) {
                                              choices = c("UPDATED1", "UP2"))
         },
         ignoreInit = TRUE)
+      # This is necessary to communicate with another module
+      # In this specific case, we want this module to communicate with
+      # the map module.
+      return(
+        reactive({
+          input$dropdown_child
+        }))
     }
   )
 }

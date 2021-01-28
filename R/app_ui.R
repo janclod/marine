@@ -23,7 +23,8 @@ page_main <- function() {
     semantic.dashboard::dashboardBody(
       semantic.dashboard::tabItems(
         semantic.dashboard::tabItem(tabName = "vessel_browser",
-                                    mod_dropdown_ui("1")
+                                    mod_dropdown_ui("1"),
+                                    mod_map_ui("1")
                                     ))
     )
   )
