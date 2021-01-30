@@ -4,9 +4,11 @@
 \alias{get_gps_loc}
 \title{Get the longitude and latitude for given vessel ID.}
 \usage{
-get_gps_loc(vessel_id = 2334324)
+get_gps_loc(df, vessel_id)
 }
 \arguments{
+\item{df}{the dataframe containing the SHIPID column.}
+
 \item{vessel_id}{SHIPID found in the dataframe.}
 }
 \description{
@@ -16,6 +18,6 @@ between two consecutive observations
 }
 \examples{
 \dontrun{
-get_gps_loc()
+get_gps_loc(dataframe, vessel_id = "2764")
 }
 }

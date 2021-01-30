@@ -34,6 +34,7 @@ test_that("read csv", {
 
 test_that("get list of vessel ID", {
   df <- get_data()
+  expect_silent(get_vessel_id(df))
   #################
   ## Without filter
   vessel_ids <- get_vessel_id(df)
@@ -71,6 +72,7 @@ test_that("get list of vessel ID", {
 })
 
 test_that("get list of vessel types", {
+  expect_silent(get_vessel_type(get_data()))
   vessel_type <- get_vessel_type(get_data())
   expect_vector(vessel_type)
   expect_true(is.character(vessel_type))
@@ -78,8 +80,22 @@ test_that("get list of vessel types", {
   expect_true(length(vessel_type) > 1)
 })
 
-test_that("return the gps coordinates", {
-  loc <- get_gps_loc(vessel_id)
-  expect_true(is.numeric(loc[1]))
-  expect_true(is.numeric(loc[2]))
+test_that("get gps coordinates of given vessel ID", {
+  expect_silent(get_gps_loc(get_data(), vessel_id = "2764"))
+  locs <- get_gps_loc(get_data(), vessel_id = "2764")
+  expect_type(locs, "list")
+  expect_true("loc1" %in% names(locs))
+  expect_true("loc2" %in% names(locs))
+  expect_true("dist" %in% names(locs))
+  expect_length(locs$loc1, 2)
+  expect_length(locs$loc2, 2)
+  expect_length(locs$dist, 1)
+  expect_true(-180 < locs$loc1[1] && locs$loc1[1] < 180)
+  expect_true(-180 < locs$loc2[1] && locs$loc2[1] < 180)
+  expect_true(-90 < locs$loc1[2] && locs$loc1[2] < 90)
+  expect_true(-90 < locs$loc2[2] && locs$loc2[2] < 90)
+  expect_true(locs$dist > 0)
+  expect_true(is.numeric(locs$loc1))
+  expect_true(is.numeric(locs$loc2))
+  expect_type(locs$dist, "character")
 })

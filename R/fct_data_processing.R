@@ -71,13 +71,28 @@ get_vessel_type <- function(df) {
 #' Finds the observation when it sailed the longest distance
 #' between two consecutive observations
 #'
+#' @param df the dataframe containing the SHIPID column.
 #' @param vessel_id SHIPID found in the dataframe.
 #'
 #' @examples
 #' \dontrun{
-#' get_gps_loc()
+#' get_gps_loc(dataframe, vessel_id = "2764")
 #' }
-get_gps_loc <- function(vessel_id = 2334324) {
-  # Write logic
-  c(12, 34)
+get_gps_loc <- function(df, vessel_id) {
+  filtered_df <- dplyr::filter(df, df$SHIP_ID == vessel_id)
+  p1 <- c(9999999, 999999)
+  p2 <- c(9999999, 999999)
+  d <- 0
+  for (i in (nrow(filtered_df) - 1)) {
+    j <- i + 1
+    temp_p1 <- c(filtered_df[i, ]["LON"][[1]], filtered_df[1, ]["LAT"][[1]])
+    temp_p2 <- c(filtered_df[j, ]["LON"][[1]], filtered_df[j, ]["LAT"][[1]])
+    temp_d <- geosphere::distCosine(temp_p1, temp_p2)
+    if (temp_d > d) {
+      d <- temp_d
+      p1 <- temp_p1
+      p2 <- temp_p2
+    }
+  }
+  list(loc1 = p1, loc2 = p2, dist = as.character(d))
 }
