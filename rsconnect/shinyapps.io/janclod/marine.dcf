@@ -5,6 +5,6 @@ account: janclod
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3503416
-bundleId: 4150780
+bundleId: 4161021
 url: https://janclod.shinyapps.io/marine/
-when: 1611774786.23698
+when: 1612023429.94983
