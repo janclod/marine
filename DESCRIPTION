@@ -20,7 +20,9 @@ Imports:
     semantic.dashboard,
     pkgload,
     leaflet,
-    magrittr
+    magrittr,
+    dplyr,
+    geosphere
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
