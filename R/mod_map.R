@@ -27,7 +27,7 @@ mod_map_server <- function(id, vessel_id) {
           ctr_lng <- (pts$loc1[1] + pts$loc2[1]) / 2
           ctr_lat <- (pts$loc1[2] + pts$loc2[2]) / 2
           leaflet::leaflet() %>%
-            leaflet::setView(lng = ctr_lng, lat = ctr_lat, zoom = 10) %>%
+            leaflet::setView(lng = ctr_lng, lat = ctr_lat, zoom = 8) %>%
             leaflet::addProviderTiles("Esri.WorldStreetMap") %>%
             leaflet::addMarkers(lng = pts$loc1[1],
                                 lat = pts$loc1[2],
