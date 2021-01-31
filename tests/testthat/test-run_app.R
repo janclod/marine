@@ -8,5 +8,5 @@ test_that("app works", {
   # Allow for the generation for platform specific snapshots using suffix param:
   # https://github.com/rstudio/shiny-testing-gha-example/
   expect_pass(testApp("apps/run_app/",
-                      compareImages = FALSE,
+                      compareImages = TRUE,
                       suffix = strsplit(utils::osVersion, " ")[[1]][1]))})

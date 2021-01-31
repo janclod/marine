@@ -102,7 +102,6 @@ jobs:
           path: check
 
       - name: Test coverage
-        if: runner.os == 'macOS' || runner.os == 'Windows'
         run: covr::codecov()
         shell: Rscript {0}
 
