@@ -52,10 +52,10 @@ mod_dropdown_server <- function(id) {
       # This is necessary to communicate with another module
       # In this specific case, we want this module to communicate with
       # the map module.
-      return(
-        reactive({
-          input$dropdown_child
-        }))
+      dropdown_child_react <- reactive({
+        input$dropdown_child
+      })
+      return(dropdown_child_react)
     }
   )
 }
